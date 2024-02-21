@@ -54,3 +54,11 @@
           "data": "request processed ok"
       }
     ```
+
+## Platform architecture
+You can implement this proxy-ticketing functionality with an API Gateway or with a service mesh. 
+When implementing it with a service mesh, be aware that it is best to have it as 2 seperated data planes,
+ 2 separated meshes or even as 2 separated OpenShift clusters (scaling wise).
+
+A possible architecture then looks like this:
+![Service Mesh Ticketing System Architecture](docs/ticketing_system_service_mesh.jpg)
