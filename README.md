@@ -63,3 +63,18 @@ When implementing it with a service mesh, be aware that it is best to have it as
 A possible architecture then looks like this:  
 
 ![Service Mesh Ticketing System Architecture](docs/ticketing_system_service_mesh.jpg)
+
+# Bonus - Camel K integration
+The given Camel routes can be served serverless as well. For this you can make use of Camel K in combination with
+Knative (i.e., OpenShift serverless). When you have the Camel K and OpenShift Serverless operator installed on OpenShift
+(which is the case on the free OpenShift sandbox that you can find on developers.redhat.com), 
+you just have to run the following command:
+```shell
+kamel run src/main/kotlin/CamelKExample.kts
+```
+This will create a Camel integration and an OpenShift serverless serving.
+The serverless serving can be tested by executing the following CURL command:
+(keep in mind to change the host name)
+```shell
+curl --location 'https://camel-k-example-rh-ee-mvandepe-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/hello/get'
+```
