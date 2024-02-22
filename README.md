@@ -70,7 +70,7 @@ Knative (i.e., OpenShift serverless). When you have the Camel K and OpenShift Se
 (which is the case on the free OpenShift sandbox that you can find on developers.redhat.com), 
 you just have to run the following command:
 ```shell
-kamel run src/main/kotlin/CamelKExample.kts
+kamel run src/main/scripts/CamelKExample.kts
 ```
 This will create a Camel integration and an OpenShift serverless serving.
 The serverless serving can be tested by executing the following CURL command:
